@@ -1,5 +1,7 @@
 import { DateTime } from 'luxon'
-import { BaseModel, column } from '@ioc:Adonis/Lucid/Orm'
+import { BaseModel, column, HasOne, hasOne } from '@ioc:Adonis/Lucid/Orm'
+
+import Genre from 'App/Models/Genre'
 
 export default class Film extends BaseModel {
   @column({ isPrimary: true })
@@ -40,4 +42,10 @@ export default class Film extends BaseModel {
 
   @column.dateTime({ autoCreate: true, autoUpdate: true })
   public updatedAt: DateTime
+
+  @hasOne(() => Genre, {
+    foreignKey: 'id',
+    localKey: 'genre_id',
+  })
+  public genre: HasOne<typeof Genre>
 }
