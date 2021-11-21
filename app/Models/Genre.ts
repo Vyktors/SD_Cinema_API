@@ -1,6 +1,5 @@
 import { DateTime } from 'luxon'
 import { BaseModel, column } from '@ioc:Adonis/Lucid/Orm'
-import Film from 'App/Models/Film'
 
 export default class Genre extends BaseModel {
   @column({ isPrimary: true })

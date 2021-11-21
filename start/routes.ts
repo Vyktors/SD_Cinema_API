@@ -20,7 +20,8 @@
 
 import Route from '@ioc:Adonis/Core/Route'
 import Database from '@ioc:Adonis/Lucid/Database'
+import Film from 'App/Models/Film'
 
 Route.get('/', async () => {
-  return Database.from('test').select('*')
+  return Film.query().preload('genre')
 })

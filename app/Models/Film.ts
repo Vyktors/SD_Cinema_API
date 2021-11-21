@@ -11,7 +11,7 @@ export default class Film extends BaseModel {
   public titre: string
 
   @column()
-  public descrption: string
+  public description: string
 
   @column()
   public genre_id: number
@@ -29,7 +29,7 @@ export default class Film extends BaseModel {
   public realisateur: string
 
   @column()
-  public dureeMinute: number
+  public dureeMinutes: number
 
   @column.date()
   public dateSortie: DateTime
