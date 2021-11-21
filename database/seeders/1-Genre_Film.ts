@@ -15,6 +15,15 @@ export default class GenreSeeder extends BaseSeeder {
       {
         nom: 'Horreur',
       },
+      {
+        nom: 'Enfant',
+      },
+      {
+        nom: 'Comédie',
+      },
+      {
+        nom: 'Romance',
+      },
     ])
 
     await Film.updateOrCreateMany('titre', [
@@ -41,6 +50,30 @@ export default class GenreSeeder extends BaseSeeder {
         dureeMinutes: 80,
         dateSortie: DateTime.local(2021, 11, 15),
         dateFin: DateTime.local(2021, 12, 15),
+      },
+      {
+        titre: 'Titre romantique',
+        description: 'Un film romantique',
+        genre_id: 6,
+        rating: 4,
+        img: '',
+        acteur: 'Une actrice romantique',
+        realisateur: 'Un réalisateur amoureux',
+        dureeMinutes: 75,
+        dateSortie: DateTime.local(2021, 11, 20),
+        dateFin: DateTime.local(2021, 12, 20),
+      },
+      {
+        titre: 'Titre enfant',
+        description: 'Un film pour enfants',
+        genre_id: 4,
+        rating: 3,
+        img: '',
+        acteur: 'Une actrice enfant',
+        realisateur: 'Une réalisatrice pour enfant',
+        dureeMinutes: 80,
+        dateSortie: DateTime.local(2021, 11, 10),
+        dateFin: DateTime.local(2021, 12, 10),
       },
     ])
   }

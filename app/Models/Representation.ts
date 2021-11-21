@@ -10,10 +10,10 @@ export default class Representation extends BaseModel {
   public filmId: number
 
   @column()
-  public date: DateTime
+  public date: string
 
   @column()
-  public heure: DateTime
+  public heure: string
 
   @hasOne(() => Film, {
     foreignKey: 'id',
