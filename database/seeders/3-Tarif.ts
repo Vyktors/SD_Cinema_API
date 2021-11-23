@@ -56,8 +56,4 @@ export default class TarifSeeder extends BaseSeeder {
       },
     ])
   }
-  }
-  }
-
-
 }
