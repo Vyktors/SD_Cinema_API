@@ -23,6 +23,7 @@ import Database from '@ioc:Adonis/Lucid/Database'
 import Film from 'App/Models/Film'
 import Representation from 'App/Models/Representation'
 import Billet from 'App/Models/Billet'
+import FilmVedette from 'App/Models/FilmVedette'
 
 Route.get('/', async () => {
   return Film.query().preload('genre')
@@ -36,4 +37,8 @@ Route.get('/rep', async () => {
 
 Route.get('/billet', async () => {
   return Billet.query()
+})
+
+Route.get('/vedette', async () => {
+  return FilmVedette.query().preload('film1').preload('film2').preload('film3').preload('film4')
 })
