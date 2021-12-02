@@ -1,7 +1,6 @@
 // import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import Billet from 'App/Models/Billet'
 export default class BilletsController {
-
   public async getBilletsSorted() {
     const extras = await Billet.query().where('extra', '=', true)
     const mains = await Billet.query().where('extra', '=', false)
