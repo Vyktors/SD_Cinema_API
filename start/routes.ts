@@ -25,6 +25,8 @@ import Representation from 'App/Models/Representation'
 import Billet from 'App/Models/Billet'
 import FilmVedette from 'App/Models/FilmVedette'
 
+Route.get('/Cont', 'FilmsController.getAiringFilms')
+
 Route.get('/', async () => {
   return Film.query().preload('genre')
 })
@@ -35,10 +37,24 @@ Route.get('/rep', async () => {
   })
 })
 
-Route.get('/billet', async () => {
-  return Billet.query()
-})
+Route.get('/billets', 'BilletsController.getBilletsSorted')
 
 Route.get('/vedette', async () => {
   return FilmVedette.query().preload('film1').preload('film2').preload('film3').preload('film4')
 })
+
+Route.get('/allo', async () => {
+  const tab = ['un', 'deux']
+  return { champ: tab }
+})
+
+/*
+Un film
+Films
+Films en vedettes,
+Film à venir
+Prix billets
+Nourritures
+Carte cadeaux
+Horaire pour la semaine
+Horaire pour un film*/
