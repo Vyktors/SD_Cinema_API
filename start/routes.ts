@@ -37,16 +37,9 @@ Route.get('/rep', async () => {
   })
 })
 
-Route.get('/billets', 'BilletsController.getBilletsSorted')
-
-Route.get('/vedette', async () => {
-  return FilmVedette.query().preload('film1').preload('film2').preload('film3').preload('film4')
-})
-
-Route.get('/allo', async () => {
-  const tab = ['un', 'deux']
-  return { champ: tab }
-})
+Route.get('/billets', 'InformationController.getBilletsSorted')
+Route.get('/nourriture', 'InformationController.getNourriture')
+Route.get('/cadeau', 'InformationController.getCadeau')
 
 /*
 Un film
