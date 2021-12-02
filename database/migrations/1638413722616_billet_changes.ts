@@ -17,7 +17,7 @@ export default class BilletChanges extends BaseSchema {
 
     this.schema.createTable(this.tableName, (table) => {
       table.increments('id')
-      table.string('condition').defaultTo('Unnamed')
+      table.string('nom').defaultTo('Unnamed')
       table.integer('prix').defaultTo(10)
       table.boolean('extra').defaultTo(false)
       table.timestamp('created_at', { useTz: true }).defaultTo(this.now())

@@ -3,10 +3,10 @@ import Billet from 'App/Models/Billet'
 
 export default class BilletSeeder extends BaseSeeder {
   public async run() {
-    await Billet.updateOrCreateMany('condition', [
+    await Billet.updateOrCreateMany('nom', [
       {
         prix: 10,
-        condition: '2 à 17 ans',
+        nom: '2 à 17 ans',
         extra: false,
       },
     ])

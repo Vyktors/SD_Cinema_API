@@ -1,5 +1,5 @@
 import { DateTime } from 'luxon'
-import { BaseModel, column, hasOne, HasOne } from '@ioc:Adonis/Lucid/Orm'
+import { BaseModel, column } from '@ioc:Adonis/Lucid/Orm'
 
 export default class Billet extends BaseModel {
   @column({ isPrimary: true, serializeAs: null })
@@ -9,7 +9,7 @@ export default class Billet extends BaseModel {
   public prix: number
 
   @column()
-  public condition: string
+  public nom: string
 
   @column({ serializeAs: null })
   public extra: boolean
