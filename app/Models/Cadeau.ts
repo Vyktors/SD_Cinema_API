@@ -11,6 +11,9 @@ export default class Cadeau extends BaseModel {
   @column()
   public prix: number
 
+  @column()
+  public img: string
+
   @column.dateTime({ autoCreate: true, serializeAs: null })
   public createdAt: DateTime
 

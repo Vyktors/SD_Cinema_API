@@ -24,6 +24,9 @@ export default class GenreSeeder extends BaseSeeder {
       {
         nom: 'Romance',
       },
+      {
+        nom: 'Fantastique',
+      },
     ])
 
     await Film.updateOrCreateMany('titre', [
