@@ -25,11 +25,11 @@ import Representation from 'App/Models/Representation'
 import Billet from 'App/Models/Billet'
 import FilmVedette from 'App/Models/FilmVedette'
 
-Route.get('/Cont', 'FilmsController.getAiringFilms')
+Route.get('/test', 'FilmsController.getComingFilmThumbnails')
 
-Route.get('/', async () => {
-  return Film.query().preload('genre')
-})
+Route.get('/film/:id', 'FilmsController.getFilm')
+Route.get('/films/airing', 'FilmsController.getAiringFilmThumbnails')
+Route.get('/films/upcoming', 'FilmsController.getComingFilmThumbnails')
 
 Route.get('/rep', async () => {
   return Representation.query().preload('film', (preloadQuery) => {

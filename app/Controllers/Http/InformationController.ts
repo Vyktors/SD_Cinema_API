@@ -6,7 +6,7 @@ import Cadeau from 'App/Models/Cadeau'
 
 export default class InformationController {
   public async getBilletsSorted() {
-    const extras = await Billet.query().where('extra', '=', true)
+    const extras = await Billet.query().where('extra', '=', true).orderBy('id', 'asc')
     const mains = await Billet.query().where('extra', '=', false)
 
     return {
