@@ -15,6 +15,7 @@ export default class NourritureCadeauSeeder extends BaseSeeder {
       {
         nom: 'Carte cadeau 15$',
         prix: 15,
+        img: '',
       },
     ])
   }
