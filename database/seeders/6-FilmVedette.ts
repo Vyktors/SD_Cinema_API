@@ -11,7 +11,7 @@ export default class FilmVedetteSeeder extends BaseSeeder {
           film1_id: 1,
           film2_id: 2,
           film3_id: 3,
-          film4_id: 4,
+          film4_id: 5,
         },
       ]
     )
