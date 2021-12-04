@@ -8,6 +8,7 @@ import Films from 'Database/migrations/1637077743526_films'
 export default class FilmsController {
   public async getAiringFilmThumbnails() {
     //recupere les ids des featureds
+    console.log(DateTime.now().toISODate())
     const featuredFilms = await FilmVedette.query().orderBy('id', 'desc').first()
     const featIds: number[] = []
     if (featuredFilms?.film1_id) {
@@ -81,5 +82,14 @@ export default class FilmsController {
     const filmJSON = film?.serialize()
 
     return filmJSON
+  }
+
+  public async getFilm2(id) {
+    try {
+      const film = await Film.query().where('id', '=', id).firstOrFail()
+      return film
+    } catch (e) {
+      return null
+    }
   }
 }

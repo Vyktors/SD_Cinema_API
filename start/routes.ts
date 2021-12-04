@@ -19,24 +19,17 @@
 */
 
 import Route from '@ioc:Adonis/Core/Route'
-import Database from '@ioc:Adonis/Lucid/Database'
-import Film from 'App/Models/Film'
-import Representation from 'App/Models/Representation'
-import Billet from 'App/Models/Billet'
-import FilmVedette from 'App/Models/FilmVedette'
 
-Route.get('/test', 'FilmsController.getComingFilmThumbnails')
-
+//Endpoints info films
 Route.get('/film/:id', 'FilmsController.getFilm')
 Route.get('/films/airing', 'FilmsController.getAiringFilmThumbnails')
 Route.get('/films/upcoming', 'FilmsController.getComingFilmThumbnails')
 
-Route.get('/rep', async () => {
-  return Representation.query().preload('film', (preloadQuery) => {
-    preloadQuery.preload('genre')
-  })
-})
+//Endpoints horaire
+Route.get('/horaire/:id', 'RepresentationsController.getFilmSchedule')
+Route.get('/horaires', 'RepresentationsController.getWeekSchedule')
 
+//Endpoints page info
 Route.get('/billets', 'InformationController.getBilletsSorted')
 Route.get('/nourriture', 'InformationController.getNourriture')
 Route.get('/cadeau', 'InformationController.getCadeau')
