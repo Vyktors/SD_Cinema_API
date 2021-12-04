@@ -13,7 +13,7 @@ export default class Film extends BaseModel {
   @column()
   public description: string
 
-  @column()
+  @column({ serializeAs: null })
   public genre_id: number
 
   @column()
@@ -37,10 +37,10 @@ export default class Film extends BaseModel {
   @column.date()
   public dateFin: DateTime
 
-  @column.dateTime({ autoCreate: true })
+  @column.dateTime({ autoCreate: true, serializeAs: null })
   public createdAt: DateTime
 
-  @column.dateTime({ autoCreate: true, autoUpdate: true })
+  @column.dateTime({ autoCreate: true, autoUpdate: true, serializeAs: null })
   public updatedAt: DateTime
 
   @hasOne(() => Genre, {

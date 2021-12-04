@@ -75,6 +75,18 @@ export default class GenreSeeder extends BaseSeeder {
         dateSortie: DateTime.local(2021, 11, 10),
         dateFin: DateTime.local(2021, 12, 10),
       },
+      {
+        titre: 'Titre enfant2',
+        description: 'Un film pour enfants2',
+        genre_id: 4,
+        rating: 3,
+        img: '',
+        acteur: 'Une actrice enfant2',
+        realisateur: 'Une réalisatrice pour enfant2',
+        dureeMinutes: 80,
+        dateSortie: DateTime.local(2021, 11, 15),
+        dateFin: DateTime.local(2021, 12, 15),
+      },
     ])
   }
 }
