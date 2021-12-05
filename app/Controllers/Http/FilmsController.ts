@@ -8,7 +8,6 @@ import Films from 'Database/migrations/1637077743526_films'
 export default class FilmsController {
   public async getAiringFilmThumbnails() {
     //recupere les ids des featureds
-    console.log(DateTime.now().toISODate())
     const featuredFilms = await FilmVedette.query().orderBy('id', 'desc').first()
     const featIds: number[] = []
     if (featuredFilms?.film1_id) {
@@ -28,7 +27,6 @@ export default class FilmsController {
     const regulars = await Film.query()
       .where('dateSortie', '<=', DateTime.now().toISODate())
       .andWhere('dateFin', '>=', DateTime.now().toISODate())
-      .andWhereNotIn(['id'], featIds)
       .preload('genre')
     const regularsJSON = regulars.map((film) => {
       return film.serialize({
@@ -52,7 +50,6 @@ export default class FilmsController {
       })
     })
 
-    //console.log(filmsJSON)
     return {
       regular: regularsJSON,
       featured: featuredsJSON,

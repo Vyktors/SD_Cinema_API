@@ -27,6 +27,9 @@ export default class GenreSeeder extends BaseSeeder {
       {
         nom: 'Fantastique',
       },
+      {
+        nom: 'Science-Fiction',
+      },
     ])
 
     await Film.updateOrCreateMany('titre', [
@@ -36,7 +39,7 @@ export default class GenreSeeder extends BaseSeeder {
           "En Colombie, une jeune femme doit faire face à la frustration d'être la seule de sa famille à ne pas avoir de pouvoirs magiques.",
         genre_id: 4,
         rating: 4,
-        img: 'https://static.wikia.nocookie.net/lemondededisney/images/7/78/Encanto_-_La_fantastique_famille_Madrigal_03.jpg/revision/latest?cb=20211002165842&path-prefix=fr',
+        img: 'https://lumiere-a.akamaihd.net/v1/images/p_encanto_payoff_21512_e2c5d246.jpeg',
         acteur: 'Stephanie Beatriz',
         realisateur: 'Jared Bush',
         dureeMinutes: 102,
@@ -75,7 +78,7 @@ export default class GenreSeeder extends BaseSeeder {
           "L'identité de Spider-Man étant désormais révélée, Peter demande de l'aide au docteur Strange. Lorsqu'un sort tourne mal, des ennemis commencent à apparaître, forçant Peter à découvrir ce que signifie vraiment être Spider-Man.",
         genre_id: 2,
         rating: 5,
-        img: 'https://static.wikia.nocookie.net/marvelcinematicuniverse/images/1/1d/Spider-Man_No_Way_Home_JP_Poster.jpg/revision/latest?cb=20211125071618',
+        img: 'https://hereisthetake.com/wp-content/uploads/2021/06/7e450cc161c6595e3852daa0233f09d5.jpg',
         acteur: 'Tom Holland',
         realisateur: 'Jon Watts',
         dureeMinutes: 150,
@@ -94,6 +97,45 @@ export default class GenreSeeder extends BaseSeeder {
         dureeMinutes: 108,
         dateSortie: DateTime.local(2021, 11, 24),
         dateFin: DateTime.local(2021, 12, 24),
+      },
+      {
+        titre: "L'arracheuse de temps",
+        description:
+          'Bernadette, qui a toujours vécu à Saint-Élie-de-Caxton, raconte à son petit-fils une histoire de sa jeunesse.',
+        genre_id: 7,
+        rating: 4,
+        img: 'https://img5.cdn.cinoche.com/images/86240c893305d72b1fda14fcd3896026.jpg',
+        acteur: 'Robbie Amell',
+        realisateur: 'Jade Charbonneau',
+        dureeMinutes: 114,
+        dateSortie: DateTime.local(2021, 11, 19),
+        dateFin: DateTime.local(2021, 12, 19),
+      },
+      {
+        titre: 'Mourrir peut attendre',
+        description:
+          "L'agent secret britannique 007 coule des jours heureux au côté de son amoureuse Madeleine Swann dans le magnifique décor bucolique italien.",
+        genre_id: 2,
+        rating: 5,
+        img: 'https://m.media-amazon.com/images/M/MV5BYWQ2NzQ1NjktMzNkNS00MGY1LTgwMmMtYTllYTI5YzNmMmE0XkEyXkFqcGdeQXVyMjM4NTM5NDY@._V1_.jpg',
+        acteur: 'Daniel Craig',
+        realisateur: 'Barbara Broccoli',
+        dureeMinutes: 163,
+        dateSortie: DateTime.local(2021, 10, 8),
+        dateFin: DateTime.local(2021, 12, 20),
+      },
+      {
+        titre: 'Dune',
+        description:
+          'Dans un futur lointain, Leto Atreides, le duc de Caladan, est nommé au poste de gouverneur d’Arrakis, une planète désertique.',
+        genre_id: 8,
+        rating: 4,
+        img: 'https://dunenewsnet.com/wp-content/uploads/2021/10/Dune-Movie-Dolby-Cinema-Poster-AMC.jpg',
+        acteur: 'Timothée Chalamet',
+        realisateur: 'Denis Villeneuve',
+        dureeMinutes: 155,
+        dateSortie: DateTime.local(2021, 10, 22),
+        dateFin: DateTime.local(2021, 12, 22),
       },
     ])
   }
