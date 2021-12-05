@@ -137,6 +137,31 @@ export default class GenreSeeder extends BaseSeeder {
         dateSortie: DateTime.local(2021, 10, 22),
         dateFin: DateTime.local(2021, 12, 22),
       },
+      {
+        titre: 'La matrice: Résurrection',
+        description: 'Le quatrième épisode de la saga « The Matrix »',
+        genre_id: 8,
+        rating: 5,
+        img: 'https://images.squarespace-cdn.com/content/v1/5947e07bff7c505f81b292ad/1631819552045-3L8LBWKNX8CQAPGKJ09A/matrix+resurrections+poster.jpg',
+        acteur: 'Keanu Reaves',
+        realisateur: 'Lana Wachowski',
+        dureeMinutes: 148,
+        dateSortie: DateTime.local(2021, 12, 22),
+        dateFin: DateTime.local(2022, 1, 22),
+      },
+      {
+        titre: 'Chantez! 2',
+        description:
+          'Buster Moon, le koala toujours optimiste, et ses célèbres artistes se préparent à lancer leur performance la plus épatante à ce jour... et le tout dans la capitale mondiale du divertissement.',
+        genre_id: 4,
+        rating: 5,
+        img: 'https://m.media-amazon.com/images/M/MV5BOTgzYzA3NWItYzkxZC00OWQ2LTkxNTItODMyNmMxNTNkZTMxXkEyXkFqcGdeQXVyMTEyMjM2NDc2._V1_.jpg',
+        acteur: 'Matthew McConaughey',
+        realisateur: 'Garth Jennings',
+        dureeMinutes: 112,
+        dateSortie: DateTime.local(2021, 12, 22),
+        dateFin: DateTime.local(2022, 1, 22),
+      },
     ])
   }
 }
