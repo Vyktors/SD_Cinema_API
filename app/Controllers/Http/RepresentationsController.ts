@@ -5,21 +5,23 @@ import Database from '@ioc:Adonis/Lucid/Database'
 import Film from 'App/Models/Film'
 
 export default class RepresentationsController {
-  public async getFilmSchedule({ params, response }: HttpContextContract) {
+  public async getFilmSchedule({ params }: HttpContextContract) {
     const filmId = params.id
-    const horaire = await Representation.query()
-      .where('date', '>=', DateTime.now().toISODate())
-      .andWhere('date', '<=', DateTime.now().plus({ weeks: 1 }).toISODate())
-      .andWhere('film_id', '=', filmId)
-
-    const horaireJSON = horaire.map((representation) => {
-      return representation.serialize({
-        fields: {
-          pick: ['date', 'heure'],
-        },
+    const schedule: any[] = []
+    let dailySchedule: any[] = []
+    for (let i = 0; i < 7; i++) {
+      dailySchedule = await Representation.query()
+        .where('date', '=', DateTime.now().plus({ days: i }).toISODate())
+        .andWhere('film_id', '=', filmId)
+      schedule[i] = dailySchedule.map((representation) => {
+        return representation.serialize({
+          fields: {
+            pick: ['date', 'heure'],
+          },
+        })
       })
-    })
-    return horaireJSON
+    }
+    return schedule
   }
 
   public async getWeekSchedule() {
@@ -34,8 +36,9 @@ export default class RepresentationsController {
     let weeklySchedule: any[] = []
     for (let i = 0; i < filmIds.length; i++) {
       weeklySchedule = []
-      //Recupere les infos du info et horaire de la semaine du film
+      //Recupere les infos du film
       filmInfo = await Film.query().where('id', '=', filmIds[i].film_id).first()
+      //Recupere les infos pour les representations, un jour à la fois
       for (let j = 0; j < 7; j++) {
         weeklySchedule[j]
         filmDaySchedule = await Representation.query()
@@ -45,7 +48,7 @@ export default class RepresentationsController {
           return representation.serialize({ fields: { pick: ['date', 'heure', 'film_id'] } })
         })
       }
-      //Serialize données et insere dans tableau
+      //Serialize film info et insere les infos dans le tableau final
       schedule.push({
         film: filmInfo.serialize({ fields: { pick: ['id', 'titre', 'img'] } }),
         horaire: weeklySchedule,
