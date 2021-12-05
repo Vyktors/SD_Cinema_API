@@ -9,6 +9,7 @@ export default class RepresentationsController {
     const filmId = params.id
     const schedule: any[] = []
     let dailySchedule: any[] = []
+    const filmInfo = await Film.query().where('id', '=', filmId).first()
     for (let i = 0; i < 7; i++) {
       dailySchedule = await Representation.query()
         .where('date', '=', DateTime.now().plus({ days: i }).toISODate())
@@ -21,7 +22,10 @@ export default class RepresentationsController {
         })
       })
     }
-    return schedule
+    return {
+      film: filmInfo?.serialize({ fields: { pick: ['id', 'titre', 'img'] } }),
+      horaire: schedule,
+    }
   }
 
   public async getWeekSchedule() {
