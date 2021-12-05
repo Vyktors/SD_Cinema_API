@@ -29,21 +29,26 @@ export default class RepresentationsController {
     const filmIds = test.rows
 
     let filmInfo
-    let filmSchedule
+    let filmDaySchedule
     const schedule: any[] = []
+    let weeklySchedule: any[] = []
     for (let i = 0; i < filmIds.length; i++) {
+      weeklySchedule = []
       //Recupere les infos du info et horaire de la semaine du film
       filmInfo = await Film.query().where('id', '=', filmIds[i].film_id).first()
-      filmSchedule = await Representation.query()
-        .where('date', '>=', DateTime.now().toISODate())
-        .andWhere('date', '<=', DateTime.now().plus({ weeks: 1 }).toISODate())
-        .andWhere('film_id', '=', filmIds[i].film_id)
+      for (let j = 0; j < 7; j++) {
+        weeklySchedule[j]
+        filmDaySchedule = await Representation.query()
+          .where('date', '=', DateTime.now().plus({ days: j }).toISODate())
+          .andWhere('film_id', '=', filmIds[i].film_id)
+        weeklySchedule[j] = filmDaySchedule.map((representation) => {
+          return representation.serialize({ fields: { pick: ['date', 'heure', 'film_id'] } })
+        })
+      }
       //Serialize données et insere dans tableau
       schedule.push({
         film: filmInfo.serialize({ fields: { pick: ['id', 'titre', 'img'] } }),
-        horaire: filmSchedule.map((representation) => {
-          return representation.serialize({ fields: { pick: ['date', 'heure', 'film_id'] } })
-        }),
+        horaire: weeklySchedule,
       })
     }
     return schedule
