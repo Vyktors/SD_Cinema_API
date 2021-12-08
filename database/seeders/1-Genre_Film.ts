@@ -44,7 +44,7 @@ export default class GenreSeeder extends BaseSeeder {
         realisateur: 'Jared Bush',
         dureeMinutes: 102,
         dateSortie: DateTime.local(2021, 11, 24),
-        dateFin: DateTime.local(2021, 12, 24),
+        dateFin: DateTime.local(2022, 1, 24),
       },
       {
         titre: "SOS fantômes : L'au-delà",
@@ -57,7 +57,7 @@ export default class GenreSeeder extends BaseSeeder {
         realisateur: 'Jason Reitman',
         dureeMinutes: 80,
         dateSortie: DateTime.local(2021, 11, 19),
-        dateFin: DateTime.local(2021, 12, 19),
+        dateFin: DateTime.local(2022, 1, 19),
       },
       {
         titre: 'Clifford le gros chien rouge',
@@ -70,7 +70,7 @@ export default class GenreSeeder extends BaseSeeder {
         realisateur: 'Walt Becker',
         dureeMinutes: 96,
         dateSortie: DateTime.local(2021, 11, 10),
-        dateFin: DateTime.local(2021, 12, 10),
+        dateFin: DateTime.local(2022, 1, 10),
       },
       {
         titre: 'Spider-Man: Sans Retour',
@@ -82,7 +82,7 @@ export default class GenreSeeder extends BaseSeeder {
         acteur: 'Tom Holland',
         realisateur: 'Jon Watts',
         dureeMinutes: 150,
-        dateSortie: DateTime.local(2021, 12, 17),
+        dateSortie: DateTime.local(2021, 12, 25),
         dateFin: DateTime.local(2022, 1, 17),
       },
       {
@@ -96,7 +96,7 @@ export default class GenreSeeder extends BaseSeeder {
         realisateur: 'Johannes Roberts',
         dureeMinutes: 108,
         dateSortie: DateTime.local(2021, 11, 24),
-        dateFin: DateTime.local(2021, 12, 24),
+        dateFin: DateTime.local(2022, 1, 24),
       },
       {
         titre: "L'arracheuse de temps",
@@ -109,7 +109,7 @@ export default class GenreSeeder extends BaseSeeder {
         realisateur: 'Jade Charbonneau',
         dureeMinutes: 114,
         dateSortie: DateTime.local(2021, 11, 19),
-        dateFin: DateTime.local(2021, 12, 19),
+        dateFin: DateTime.local(2022, 1, 19),
       },
       {
         titre: 'Mourrir peut attendre',
@@ -122,7 +122,7 @@ export default class GenreSeeder extends BaseSeeder {
         realisateur: 'Barbara Broccoli',
         dureeMinutes: 163,
         dateSortie: DateTime.local(2021, 10, 8),
-        dateFin: DateTime.local(2021, 12, 20),
+        dateFin: DateTime.local(2022, 1, 20),
       },
       {
         titre: 'Dune',
@@ -135,7 +135,7 @@ export default class GenreSeeder extends BaseSeeder {
         realisateur: 'Denis Villeneuve',
         dureeMinutes: 155,
         dateSortie: DateTime.local(2021, 10, 22),
-        dateFin: DateTime.local(2021, 12, 22),
+        dateFin: DateTime.local(2022, 1, 22),
       },
       {
         titre: 'La matrice: Résurrection',
@@ -146,7 +146,7 @@ export default class GenreSeeder extends BaseSeeder {
         acteur: 'Keanu Reaves',
         realisateur: 'Lana Wachowski',
         dureeMinutes: 148,
-        dateSortie: DateTime.local(2021, 12, 22),
+        dateSortie: DateTime.local(2021, 12, 25),
         dateFin: DateTime.local(2022, 1, 22),
       },
       {
@@ -159,7 +159,7 @@ export default class GenreSeeder extends BaseSeeder {
         acteur: 'Matthew McConaughey',
         realisateur: 'Garth Jennings',
         dureeMinutes: 112,
-        dateSortie: DateTime.local(2021, 12, 22),
+        dateSortie: DateTime.local(2022, 1, 5),
         dateFin: DateTime.local(2022, 1, 22),
       },
     ])
