@@ -82,3 +82,14 @@ npm run dev
 ```
 
 L'API devrait maintenant fonctionner à l'adresse et sur le port indiqué dans le fichier .env.
+
+### Note
+
+Si les seeders sont roulés plus d'une fois, les représentations seront insérées en doublon.
+
+Pour remettre la base de données à 0, et la remplir par la suite, rouler les commandes suivantes.
+```
+node ace migration:rollback
+node ace migration:run
+node ace db:seed
+```
